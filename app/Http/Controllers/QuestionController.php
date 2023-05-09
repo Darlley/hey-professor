@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Rules\EndWithQuestionMarkRule;
 use Illuminate\Http\RedirectResponse;
 
 class QuestionController extends Controller
@@ -14,11 +15,7 @@ class QuestionController extends Controller
             'question' => [
                 'required',
                 'min:10',
-                function ($attribute, $value, $fail){
-                    if($value[strlen($value)-1] != "?"){
-                        $fail("Are you sure that is a question? It is a missing the qestion mark in the end.");
-                    }
-                },
+                new EndWithQuestionMarkRule()
             ],
         ]);
 
