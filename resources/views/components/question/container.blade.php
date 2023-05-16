@@ -1,5 +1,5 @@
-<div class="p-6 text-gray-900 dark:text-gray-100 flex-1">
-    <div class="mb-6">
+<div class="text-gray-900 dark:text-gray-100 flex-1 mt-6">
+    <div class="ml-14 mb-6">
         <h1 class="font-bold text-xl">{{ $slot }}</h1>
     </div>
     <div class="flex items-start space-x-4">
