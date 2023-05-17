@@ -4,9 +4,13 @@
     'put' => null,
     'delete' => null
 ])
-<form {{ $action }} class="relative" method="POST">
+<form action="{{ $action }}" method='post' class="relative">
     @csrf
     
+    @if($post)
+        @method('POST')
+    @endif
+
     @if($put)
         @method('PUT')
     @endif
