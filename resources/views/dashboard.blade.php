@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex gap-4 w-full flex-col-reverse md:flex-row box-content">
+            <div class="flex gap-4 w-full flex-col-reverse md:flex-row box-border">
                 <x-question.list :questions="$questions">Todas as perguntas</x-question.list>
                 <x-question.container>Nova pergunta</x-question.container>
             </div>
