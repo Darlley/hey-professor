@@ -15,4 +15,9 @@ class Vote extends Model
         'like',
         'unlike'
     ];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 }
