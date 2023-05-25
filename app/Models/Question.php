@@ -11,7 +11,12 @@ class Question extends Model
     use HasFactory;
 
     protected $fillable = [
-        'question'
+        'question',
+        'draft'
+    ]; 
+
+    protected $casts = [
+        'draft' => 'boolean',
     ];
 
     public function votes()
