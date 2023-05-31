@@ -21,7 +21,10 @@ class QuestionController extends Controller
             ],
         ], $messages);
         
-        Question::query()->create($attributes);
+        Question::query()->create([
+            'question' => request()->question,
+            'draft' => true
+        ]);
         
         return redirect('dashboard');
     }
