@@ -13,19 +13,20 @@ class QuestionController extends Controller
         $messages = [
             'required' => 'A :attribute é obrigatoria.',
         ];
-        $attributes = request()->validate([
+
+        request()->validate([
             'question' => [
                 'required',
                 'min:10',
                 new EndWithQuestionMarkRule()
             ],
         ], $messages);
-        
-        Question::query()->create([
+
+        user()->questions()->create([
             'question' => request()->question,
             'draft' => true
         ]);
-        
+
         return redirect('dashboard');
     }
 }
