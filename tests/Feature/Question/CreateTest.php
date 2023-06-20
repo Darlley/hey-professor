@@ -70,3 +70,9 @@ it('shoul create as a draft all the time', function() {
         'draft' => true
     ]);
 });
+
+it('has authenticated users can create a new question', function() {
+    post(route('question.store'), [
+        'question' => str_repeat('*', 260) . '?',
+    ])->assertRedirect('login');
+});
