@@ -17,7 +17,7 @@ it('should be able to create a new question bigger than 255 characters', functio
         'question' => str_repeat('*', 260) . '?',
     ]);
     // create route + controller
-    $request->assertRedirect(route('dashboard'));
+    $request->assertRedirect();
     // return redirect in method post in controller 
     assertDatabaseCount('questions', 1);
     // create migration + create model + question with factory

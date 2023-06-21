@@ -3,7 +3,7 @@
 ])
 <div class="p-6 text-gray-900 dark:text-gray-100 md:w-6/12 m-4 md:m-0 rounded-lg bg-white">
     <div class="mb-2">
-        <h1 class="font-bold text-xl">{{ $slot }}</h1>
+        <h1 class="font-bold text-xl dark:text-gray-900">{{ $slot }}</h1>
     </div>
     <ul class="flex flex-col w-full box-content bg-white divide-y divide-gray-100">
         @foreach($questions as $key => $question)

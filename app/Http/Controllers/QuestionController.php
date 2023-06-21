@@ -8,6 +8,13 @@ use Illuminate\Http\RedirectResponse;
 
 class QuestionController extends Controller
 {
+    public function index() 
+    {
+        return view('question.index', [
+            'questions' => user()->questions
+        ]);
+    }
+
     public function store(): RedirectResponse
     {
         $messages = [
@@ -27,6 +34,6 @@ class QuestionController extends Controller
             'draft' => true
         ]);
 
-        return redirect('dashboard');
+        return back();
     }
 }
