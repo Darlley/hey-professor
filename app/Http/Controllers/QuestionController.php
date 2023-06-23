@@ -11,7 +11,7 @@ class QuestionController extends Controller
     public function index() 
     {
         return view('question.index', [
-            'questions' => user()->questions
+            'questions' => user()->questions,
         ]);
     }
 
@@ -33,6 +33,15 @@ class QuestionController extends Controller
             'question' => request()->question,
             'draft' => true
         ]);
+
+        return back();
+    }
+
+    public function destroy(Question $question)
+    {
+        $this->authorize('destroy', $question);
+
+        $question->delete();
 
         return back();
     }

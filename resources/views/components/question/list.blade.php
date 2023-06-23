@@ -23,21 +23,25 @@
                 </div>
             </div>
             <dl class="flex w-full flex-none justify-between gap-x-8 sm:w-auto">
-                <div class="flex -space-x-0.5 flex-col">
-                    <dt class="flex gap-2 items-start">
-                        <x-question.form :action="route('question.like', $question)">
-                            <button type="submit" class="text-blue-700 hover:text-blue-500 flex flex-col justify-center items-center gap-1">
-                                <x-icons.like class="w-5 h-5" fill="none" />
-                                <span class="text-xs">{{ $question->votes_sum_like ?: 0 }}</span> 
-                            </button>
-                        </x-question.form>
+                <div class="flex -space-x-0.5 flex-col w-full">
+                    <dt class="flex gap-2 justify-between w-full">
+                        <div class="flex gap-2">
+                            <x-question.form :action="route('question.like', $question)">
+                                <button type="submit" class="text-blue-700 hover:text-blue-500 flex flex-col justify-center items-center gap-1">
+                                    <x-icons.like class="w-5 h-5" fill="none" />
+                                    <span class="text-xs">{{ $question->votes_sum_like ?: 0 }}</span>
+                                </button>
+                            </x-question.form>
+                            
+                            <x-question.form :action="route('question.unlike', $question)">
+                                <button type="submit" class="text-blue-700 hover:text-blue-500 flex flex-col justify-center items-center gap-1">
+                                    <x-icons.unlike class="w-5 h-5" fill="none" />
+                                    <span class="text-xs">{{ $question->votes_sum_unlike ?: 0 }}</span>
+                                </button>
+                            </x-question.form>
+                        </div>
+
                         
-                        <x-question.form :action="route('question.unlike', $question)">
-                            <button type="submit" class="text-blue-700 hover:text-blue-500 flex flex-col justify-center items-center gap-1">
-                                <x-icons.unlike class="w-5 h-5" fill="none" />
-                                <span class="text-xs">{{ $question->votes_sum_unlike ?: 0 }}</span>
-                            </button>
-                        </x-question.form>
                     </dt>
                 </div>
             </dl>
