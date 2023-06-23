@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
+        $user = \App\Models\User::factory()->create([
             'name' => 'Darlley Brito',
             'email' => 'darlley@leadszapp.com',
             'password' => bcrypt('123456789'),
         ]);
 
-        Question::factory()->count(10)->create();
+        Question::factory()->for($user, 'createdBy')->count(10)->create();
     }
 }
