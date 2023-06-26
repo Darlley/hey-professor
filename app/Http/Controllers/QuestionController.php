@@ -37,6 +37,11 @@ class QuestionController extends Controller
         return back();
     }
 
+    public function edit(Question $question)
+    {
+        // 
+    }
+
     public function destroy(Question $question)
     {
         $this->authorize('destroy', $question);
