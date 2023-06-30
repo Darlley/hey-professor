@@ -39,7 +39,9 @@ class QuestionController extends Controller
 
     public function edit(Question $question)
     {
-        // 
+        return view('question.edit', [
+            'question' => $question
+        ]);
     }
 
     public function destroy(Question $question)
